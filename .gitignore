@@ -1,0 +1,5 @@
+#ignore .env
+.env
+
+#ignore the certificate
+course-stream-app.pem
