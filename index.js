@@ -20,6 +20,7 @@ mongoose.connect(url)
 .catch(e => console.log("mongoose error " +  e));
 
 //generate token comment added to test
+//tetsing github actions again
 const generateToken = (username, userId) => {
     const token = jwt.sign({username, userId}, secret, {expiresIn: '24h'});
     return token;
