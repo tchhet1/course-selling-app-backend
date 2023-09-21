@@ -121,7 +121,6 @@ app.get('/admin/courses/:userId', authenticateAdmin, async (req, res) => {
 
 app.put('/admin/courses/:courseId', authenticateAdmin, async (req, res) => {
     const {courseId} = req.params;
-    // console.log('course id ' + courseId);
     const updates = req.body;
     const foundCourse = await Course.findByIdAndUpdate(courseId, updates, {new: true});
 
