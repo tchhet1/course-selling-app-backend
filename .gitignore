@@ -3,3 +3,6 @@
 
 #ignore the certificate
 course-stream-app2.pem
+
+#ignore node modules
+node_modules
