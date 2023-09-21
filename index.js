@@ -16,6 +16,8 @@ const url = process.env.DB_URL;
 // const connect = async () => {
 //      await mongoose.connect(url);
 // }
+
+//MONGOOSE DB CONNECTION
 mongoose.connect(url)
 .catch(e => console.log("mongoose error " +  e));
 
