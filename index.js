@@ -19,7 +19,7 @@ const url = process.env.DB_URL;
 mongoose.connect(url)
 .catch(e => console.log("mongoose error " +  e));
 
-
+//generate token comment added to test
 const generateToken = (username, userId) => {
     const token = jwt.sign({username, userId}, secret, {expiresIn: '24h'});
     return token;
