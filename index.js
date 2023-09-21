@@ -78,8 +78,6 @@ app.post('/admin/signup', async (req, res) => {
 app.post('/admin/login', async (req, res) => {
     const {username, password} = req.body;
     const foundAdmin = await Admin.findOne({username});
-    // console.log(foundAdmin);
-
     if(foundAdmin && (await bcrypt.compare(password, foundAdmin.password))){
         const token = generateToken(username, foundAdmin._id);
         res.status(200).json({message: "You are logged in", token, foundAdmin});
