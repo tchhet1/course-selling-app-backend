@@ -51,9 +51,8 @@ const authenticateAdmin = (req, res, next) => {
 }
 
 
-app.get('/', authenticateAdmin, (req, res) => {
-    console.log(req.user);
-    res.json({user: req.user});
+app.get('/', (req, res) => { 
+    res.json({message: "The server is running on port 3000"});
 })
 
 app.post('/admin/signup', async (req, res) => {
