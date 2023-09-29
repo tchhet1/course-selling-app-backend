@@ -17,8 +17,9 @@ const url = process.env.DB_URL;
 //      await mongoose.connect(url);
 // }
 
+console.log(url);
 //MONGOOSE DB CONNECTION
-mongoose.connect(url)
+mongoose.connect("mongodb+srv://triptichhetri312:JzBI19r4oqyZuObN@cluster0.fmooby1.mongodb.net/course-selling?retryWrites=true&w=majority")
 .catch(e => console.log("mongoose error " +  e));
 
 
@@ -50,9 +51,13 @@ const authenticateAdmin = (req, res, next) => {
    
 }
 
+app.get('/', (req, res) => {
+    res.json({message: "The app is runningon port 3000"});
+})
 
-app.get('/', (req, res) => { 
-    res.json({message: "The server is running on port 3000"});
+app.get('/getUser', authenticateAdmin, (req, res) => {
+    console.log(req.user);
+    res.json({user: req.user});
 })
 
 app.post('/admin/signup', async (req, res) => {
